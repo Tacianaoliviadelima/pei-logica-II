@@ -1,0 +1,175 @@
+1
+#include <stdio.h>
+
+
+int soma(int valor) {
+if(valor == 0) {
+return 0;
+} else {
+return valor + soma(valor -1);
+}
+}
+
+int main(){
+int num=0, i=0, r=0;
+
+printf("Digite o numero\n");
+scanf("%d", &num);
+
+r=soma(num);
+printf("Valor somado %d\n", r);
+}
+
+2
+
+#include <stdio.h>
+#include <locale.h>
+
+float segundos(float H, float M, float S) {
+float min,calculo,ho;
+calculo=(S+(M*60)+(H*60*60));
+
+return calculo;
+
+}
+
+int main () {
+
+setlocale(LC_ALL, "Portuguese");
+
+float H,M,S;
+
+printf("\nDigite a hora, o(s) minuto(s) e o(s) segundo(s): \n");
+
+scanf("%f%f%f",&H,&M,&S);
+
+printf("\nO total de segundos são: %f",segundos(H,M,S));
+
+}
+
+
+3#include <stdio.h>
+
+int Edivisivel(int a, int b)
+{
+if (a%b) /* Se houver resto, nao e' divisivel */
+return 0;
+else /* Nao havendo resto, e' divisivel */
+return 1;
+}
+int main()
+{
+    int a, b;
+    printf (" Entre com dois números inteiros para testar se o primeiro e' divisivel pelo segundo:  ");
+    scanf("%d %d", &a, &b);
+    if(Edivisivel(a,b))
+        printf("O primeiro numero e' divisivel pelo segundo");
+
+    else
+        printf("O primeiro numero nao e' divisivel pelo segundo");
+
+}
+
+4
+
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+#define PI 3.14
+
+float Volume(float raio) {
+float v=4/3*(PI*pow(raio,3));
+return v;
+}
+
+int main() {
+float Raio, Resultado;
+
+printf("Digite o raio de uma esfera para calcular o volume:\n");
+scanf("%f", &Raio);
+
+Resultado=Volume(Raio);
+printf("%.3f\n", Resultado);
+
+getchar();
+return 0;
+
+}
+
+5
+#include <stdio.h>
+
+int main() {
+int numero;
+printf ("Digite um numero\n");
+scanf("%d", &numero);
+if(numero >=0) {
+printf("%d e um numero positivo.\n ", numero);
+return 1;
+} else {
+printf("%d e um numero negativo.\n ", numero);
+return 0;
+}
+return 0;
+}
+
+6
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+void recebe(float altura,char sexo)
+
+{
+
+float ideal;
+
+if(sexo=='M')
+
+{
+
+ideal=(72.7 * altura )- 58;
+
+printf("\nO peso ideal é: %.2f",ideal);
+
+}
+
+else
+
+if(sexo=='F')
+
+{
+
+ideal=(62.1 * altura) - 44.7;
+
+printf("\nO peso ideal é: %.2f",ideal);
+
+}
+
+}
+
+int main()
+
+{
+
+float altura;
+
+char sexo;
+
+printf("Informe qual é a sua altura: \n");
+
+scanf("%f", &altura);
+
+printf("\n");
+
+printf("Informe o sexo M para Masculino e F para Feminino: \n");
+
+scanf("%s", &sexo);
+
+recebe(altura,sexo);
+
+printf("\n \n");
+
+}
